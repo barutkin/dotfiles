@@ -148,5 +148,13 @@ test -s ~/.bash_aliases && . ~/.bash_aliases || true
 GPG_TTY=$(tty)
 export GPG_TTY
 
+vim()
+{
+	local STTYOPTS="$(stty --save)"
+	stty stop '' -ixoff
+	command vim "$@"
+	stty "$STTYOPTS"
+}
+
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
