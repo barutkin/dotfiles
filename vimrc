@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin indent on
 
+Plugin 'gmarik/vundle.git'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -13,6 +14,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'reedes/vim-lexical'
+Plugin 'ervandew/supertab'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'kien/ctrlp.vim'
 
 set t_Co=256
 colorscheme jellybeans
@@ -69,3 +73,6 @@ augroup lexical
 augroup END
 
 let g:lexical#spelllang = ['en_us', 'ru_ru']
+
+" Supertab
+let g:SuperTabDefaultCompletionType = 'context'
