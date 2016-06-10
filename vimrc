@@ -17,6 +17,7 @@ Plugin 'reedes/vim-lexical'
 Plugin 'ervandew/supertab'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/gitignore'
 
 set t_Co=256
 colorscheme jellybeans
@@ -61,7 +62,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 let g:syntastic_c_compiler = 'gcc'
 
 " Lexical stuff
@@ -76,3 +76,10 @@ let g:lexical#spelllang = ['en_us', 'ru_ru']
 
 " Supertab
 let g:SuperTabDefaultCompletionType = 'context'
+
+set wildignore+=*.so,*.swp,*.zip,*.mp3,*.pdf,*.xls,*.odt,*.ods,*.doc,*.docx,*.xlsx
+
+set autoindent
+set expandtab
+set softtabstop=3
+set shiftwidth=3
