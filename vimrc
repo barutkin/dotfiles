@@ -66,7 +66,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_auto_refresh_includes = 1
 let g:syntastic_c_compiler = 'gcc'
+
+let g:syntastic_html_checkers = 'tidy'
+let g:syntastic_php_checkers = ['phpcs', 'php']
+let g:syntastic_tex_checkers = ['lacheck', 'chktex']
 
 " Lexical stuff
 augroup lexical
