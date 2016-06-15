@@ -57,6 +57,7 @@ nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
 " Statusline always active
 set laststatus=2
+
 " Syntastic stuff
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -74,7 +75,6 @@ augroup lexical
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
-
 let g:lexical#spelllang = ['en_us', 'ru_ru']
 
 " Supertab
@@ -82,7 +82,15 @@ let g:SuperTabDefaultCompletionType = 'context'
 
 set wildignore+=*.so,*.swp,*.zip,*.mp3,*.pdf,*.xls,*.odt,*.ods,*.doc,*.docx,*.xlsx
 
+" Indent stuff
 set autoindent
 set expandtab
 set softtabstop=3
 set shiftwidth=3
+
+" vimrc auto reload
+augroup myvimrc
+   au!
+   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
