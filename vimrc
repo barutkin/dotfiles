@@ -8,7 +8,9 @@ filetype plugin indent on
 Plugin 'gmarik/vundle.git'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'scrooloose/nerdtree'
+Plugin 'wellle/targets.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nanotech/jellybeans.vim'
@@ -18,6 +20,7 @@ Plugin 'ervandew/supertab'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/gitignore'
+Plugin 'othree/html5.vim'
 
 set t_Co=256
 colorscheme jellybeans
