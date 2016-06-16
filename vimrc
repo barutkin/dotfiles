@@ -52,8 +52,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Toggle paste mode
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 
 "nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
