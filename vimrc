@@ -72,8 +72,8 @@ let g:syntastic_c_auto_refresh_includes = 1
 let g:syntastic_c_compiler = 'gcc'
 
 let g:syntastic_html_checkers = 'tidy'
-let g:syntastic_php_checkers = ['phpcs', 'php']
-let g:syntastic_tex_checkers = ['lacheck', 'chktex']
+let g:syntastic_php_checkers = 'phpcs'
+let g:syntastic_tex_checkers = 'lacheck'
 
 " Lexical stuff
 augroup lexical
@@ -92,6 +92,7 @@ set wildignore+=*.so,*.swp,*.zip,*.mp3,*.pdf,*.xls,*.odt,*.ods,*.doc,*.docx,*.xl
 " Indent stuff
 set autoindent
 set expandtab
+set tabstop=3
 set softtabstop=3
 set shiftwidth=3
 
