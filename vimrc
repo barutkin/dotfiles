@@ -22,6 +22,7 @@ Plugin 'ervandew/supertab'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
+" Plugin 'lervag/vimtex'
 
 set t_Co=256
 colorscheme jellybeans
