@@ -77,7 +77,7 @@ let g:syntastic_c_compiler = 'gcc'
 
 let g:syntastic_html_checkers = 'tidy'
 let g:syntastic_php_checkers = 'phpcs'
-let g:syntastic_tex_checkers = 'lacheck'
+let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 " Lexical stuff
 augroup lexical
