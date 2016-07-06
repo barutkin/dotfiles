@@ -23,6 +23,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-obsession'
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'lervag/vimtex'
 
 set t_Co=256
