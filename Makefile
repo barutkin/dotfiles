@@ -1,31 +1,37 @@
-BACKUPDIR = $(HOME)/.mydotfiles.backup
-BASHRCTARGET = $(HOME)/.bashrc
-INPUTRCTARGET = $(HOME)/.inputrc
-LXQTPANELTARGET = $(HOME)/.config/lxqt/panel.conf
-OPENBOXRCTARGET = $(HOME)/.config/openbox/rc.xml
-QTERMINALTARGET = $(HOME)/.config/qterminal.org/qterminal.ini
-SCREENRCTARGET = $(HOME)/.screenrc
-TMUXCONFTARGET = $(HOME)/.tmux.conf
-VIMRCTARGET = $(HOME)/.vimrc
+backupDir = $(HOME)/.mydotfiles.backup
+bashrcTarget = $(HOME)/.bashrc
+bashprofileTarget = $(HOME)/.bash_profile
+inputrcTarget = $(HOME)/.inputrc
+xkbmapTarget = $(HOME)/.Xkbmap
+lxqtpanelTarget = $(HOME)/.config/lxqt/panel.conf
+openboxrcTarget = $(HOME)/.config/openbox/rc.xml
+qterminalTarget = $(HOME)/.config/qterminal.org/qterminal.ini
+screenrcTarget = $(HOME)/.screenrc
+tmuxconfTarget = $(HOME)/.tmux.conf
+vimrcTarget = $(HOME)/.vimrc
 
 install:
-	mkdir -p $(BACKUPDIR)
-	if [ -e $(BASHRCTARGET) ]; then mv -v $(BASHRCTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/bashrc $(BASHRCTARGET); fi
-	if [ -e $(INPUTRCTARGET)  ]; then mv -v $(INPUTRCTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/inputrc $(INPUTRCTARGET); fi
-	if [ -e $(LXQTPANELTARGET) ]; then mv -v $(LXQTPANELTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/lxqtpanel.conf $(LXQTPANELTARGET); fi
-	if [ -e $(OPENBOXRCTARGET) ]; then mv -v $(OPENBOXRCTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/openboxrc.xml $(OPENBOXRCTARGET); fi
-	if [ -e $(QTERMINALTARGET) ]; then mv -v $(QTERMINALTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/qterminal.ini $(QTERMINALTARGET); fi
-	if [ -e $(SCREENRCTARGET) ]; then mv -v $(SCREENRCTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/screenrc $(SCREENRCTARGET); fi
-	if [ -e $(TMUXCONFTARGET) ]; then mv -v $(TMUXCONFTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/tmux.conf $(TMUXCONFTARGET); fi
-	if [ -e $(VIMRCTARGET) ]; then mv -v $(VIMRCTARGET) $(BACKUPDIR)/ && ln -s $(PWD)/vimrc $(VIMRCTARGET); fi
+	mkdir -p $(backupDir)
+	if [ -e $(bashrcTarget) ]; then mv -v $(bashrcTarget) $(backupDir)/ && ln -s $(PWD)/bashrc $(bashrcTarget); fi
+	if [ -e $(bashprofileTarget) ]; then mv -v $(bashprofileTarget) $(backupDir)/ && ln -s $(PWD)/bashrc $(bashprofileTarget); fi
+	if [ -e $(inputrcTarget)  ]; then mv -v $(inputrcTarget) $(backupDir)/ && ln -s $(PWD)/inputrc $(inputrcTarget); fi
+	if [ -e $(xkbmapTarget)  ]; then mv -v $(xkbmapTarget) $(backupDir)/ && ln -s $(PWD)/Xkbmap $(xkbmapTarget); fi
+	if [ -e $(lxqtpanelTarget) ]; then mv -v $(lxqtpanelTarget) $(backupDir)/ && ln -s $(PWD)/lxqtpanel.conf $(lxqtpanelTarget); fi
+	if [ -e $(openboxrcTarget) ]; then mv -v $(openboxrcTarget) $(backupDir)/ && ln -s $(PWD)/openboxrc.xml $(openboxrcTarget); fi
+	if [ -e $(qterminalTarget) ]; then mv -v $(qterminalTarget) $(backupDir)/ && ln -s $(PWD)/qterminal.ini $(qterminalTarget); fi
+	if [ -e $(screenrcTarget) ]; then mv -v $(screenrcTarget) $(backupDir)/ && ln -s $(PWD)/screenrc $(screenrcTarget); fi
+	if [ -e $(tmuxconfTarget) ]; then mv -v $(tmuxconfTarget) $(backupDir)/ && ln -s $(PWD)/tmux.conf $(tmuxconfTarget); fi
+	if [ -e $(vimrcTarget) ]; then mv -v $(vimrcTarget) $(backupDir)/ && ln -s $(PWD)/vimrc $(vimrcTarget); fi
 
 uninstall:
-	if [ -e $(BASHRCTARGET) ]; then unlink $(BASHRCTARGET) && mv -v $(BACKUPDIR)/`echo $(BASHRCTARGET) | awk -F'/' '{ print $$NF }' -` $(BASHRCTARGET); fi
-	if [ -e $(INPUTRCTARGET) ]; then unlink $(INPUTRCTARGET) && mv -v $(BACKUPDIR)/`echo $(INPUTRCTARGET) | awk -F'/' '{ print $$NF }'` $(INPUTRCTARGET); fi
-	if [ -e $(LXQTPANELTARGET) ]; then unlink $(LXQTPANELTARGET) && mv -v $(BACKUPDIR)/`echo $(LXQTPANELTARGET) | awk -F'/' '{ print $$NF }'` $(LXQTPANELTARGET); fi
-	if [ -e $(OPENBOXRCTARGET) ]; then unlink $(OPENBOXRCTARGET) && mv -v $(BACKUPDIR)/`echo $(OPENBOXRCTARGET) | awk -F'/' '{ print $$NF }'` $(OPENBOXRCTARGET); fi
-	if [ -e $(QTERMINALTARGET) ]; then unlink $(QTERMINALTARGET) && mv -v $(BACKUPDIR)/`echo $(QTERMINALTARGET) | awk -F'/' '{ print $$NF }'` $(QTERMINALTARGET); fi
-	if [ -e $(SCREENRCTARGET) ]; then unlink $(SCREENRCTARGET) && mv -v $(BACKUPDIR)/`echo $(SCREENRCTARGET) | awk -F'/' '{ print $$NF }'` $(SCREENRCTARGET); fi
-	if [ -e $(TMUXCONFTARGET) ]; then unlink $(TMUXCONFTARGET) && mv -v $(BACKUPDIR)/`echo $(TMUXCONFTARGET) | awk -F'/' '{ print $$NF }'` $(TMUXCONFTARGET); fi
-	if [ -e $(VIMRCTARGET) ]; then unlink $(VIMRCTARGET) && mv -v $(BACKUPDIR)/`echo $(VIMRCTARGET) | awk -F'/' '{ print $$NF }'` $(VIMRCTARGET); fi
-	rm -rfv $(BACKUPDIR) 
+	if [ -e $(bashrcTarget) ]; then unlink $(bashrcTarget) && mv -v $(backupDir)/`echo $(bashrcTarget) | awk -F'/' '{ print $$NF }' -` $(bashrcTarget); fi
+	if [ -e $(bashprofileTarget) ]; then unlink $(bashprofileTarget) && mv -v $(backupDir)/`echo $(bashprofileTarget) | awk -F'/' '{ print $$NF }' -` $(bashprofileTarget); fi
+	if [ -e $(inputrcTarget) ]; then unlink $(inputrcTarget) && mv -v $(backupDir)/`echo $(inputrcTarget) | awk -F'/' '{ print $$NF }'` $(inputrcTarget); fi
+	if [ -e $(xkbmapTarget) ]; then unlink $(xkbmapTarget) && mv -v $(backupDir)/`echo $(xkbmapTarget) | awk -F'/' '{ print $$NF }'` $(xkbmapTarget); fi
+	if [ -e $(lxqtpanelTarget) ]; then unlink $(lxqtpanelTarget) && mv -v $(backupDir)/`echo $(lxqtpanelTarget) | awk -F'/' '{ print $$NF }'` $(lxqtpanelTarget); fi
+	if [ -e $(openboxrcTarget) ]; then unlink $(openboxrcTarget) && mv -v $(backupDir)/`echo $(openboxrcTarget) | awk -F'/' '{ print $$NF }'` $(openboxrcTarget); fi
+	if [ -e $(qterminalTarget) ]; then unlink $(qterminalTarget) && mv -v $(backupDir)/`echo $(qterminalTarget) | awk -F'/' '{ print $$NF }'` $(qterminalTarget); fi
+	if [ -e $(screenrcTarget) ]; then unlink $(screenrcTarget) && mv -v $(backupDir)/`echo $(screenrcTarget) | awk -F'/' '{ print $$NF }'` $(screenrcTarget); fi
+	if [ -e $(tmuxconfTarget) ]; then unlink $(tmuxconfTarget) && mv -v $(backupDir)/`echo $(tmuxconfTarget) | awk -F'/' '{ print $$NF }'` $(tmuxconfTarget); fi
+	if [ -e $(vimrcTarget) ]; then unlink $(vimrcTarget) && mv -v $(backupDir)/`echo $(vimrcTarget) | awk -f'/' '{ print $$NF }'` $(vimrcTarget); fi
+	rm -rfv $(backupDir) 

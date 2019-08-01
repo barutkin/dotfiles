@@ -56,7 +56,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Toggle paste mode
-nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+"nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 
 "nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
@@ -98,9 +98,9 @@ set wildignore+=*.so,*.swp,*.zip,*.mp3,*.pdf,*.xls,*.odt,*.ods,*.doc,*.docx,*.xl
 " Indent stuff
 set autoindent
 set expandtab
-set tabstop=3
-set softtabstop=3
-set shiftwidth=3
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " vimrc auto reload
 augroup myvimrc

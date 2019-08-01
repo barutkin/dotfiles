@@ -22,13 +22,6 @@ export EDITOR=/usr/bin/vim
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server
 
-# If you want to use a Palm device with Linux, uncomment the two lines below.
-# For some (older) Palm Pilots, you might need to set a lower baud rate
-# e.g. 57600 or 38400; lowest is 9600 (very slow!)
-#
-#export PILOTPORT=/dev/pilot
-#export PILOTRATE=115200
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000000000
 HISTFILESIZE=10000000
@@ -37,7 +30,7 @@ HISTFILESIZE=10000000
 # If not running interactively, do not do anything
 alias tmux="TERM=screen-256color tmux"
 [[ $- != *i* ]] && return
-if [[ -z "$TMUX" ]] ;then
+if [[ -z "$TMUX" ]] && [[ $TERM != linux ]]; then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
         tmux new-session
@@ -127,7 +120,7 @@ if ${use_color} ; then
 
 	#BSD#@export CLICOLOR=1
 	#GNU#@
-        alias ls='ls --color=auto'
+    alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -140,8 +133,8 @@ else
 	fi
 fi
 
-
-export PATH=~/bin/:$PATH
+export GOPATH=$HOME/.gopath
+export PATH=$GOPATH:$GOPATH/bin:~/bin/:$PATH
 
 test -s ~/.bash_aliases && . ~/.bash_aliases || true
 
