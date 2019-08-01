@@ -143,7 +143,7 @@ export GPG_TTY
 
 vim()
 {
-	local STTYOPTS="$(stty --save)"
+	local STTYOPTS="$(stty -g)"
 	stty stop '' -ixoff
 	command vim "$@"
 	stty "$STTYOPTS"
