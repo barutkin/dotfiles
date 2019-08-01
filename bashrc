@@ -118,9 +118,12 @@ if ${use_color} ; then
 		PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 	fi
 
-	#BSD#@export CLICOLOR=1
-	#GNU#@
-    alias ls='ls --color=auto'
+	if [ "$(uname)" == "Darwin" ]; then
+		export CLICOLOR=1
+		alias ls='ls -G'
+	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        alias ls='ls --color=auto'
+	fi	
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
