@@ -1,6 +1,7 @@
 backupDir = $(HOME)/.mydotfiles.backup
 bashrcTarget = $(HOME)/.bashrc
 bashprofileTarget = $(HOME)/.bash_profile
+bashaliasesTarget = $(HOME)/.bash_aliases
 inputrcTarget = $(HOME)/.inputrc
 xkbmapTarget = $(HOME)/.Xkbmap
 lxqtpanelTarget = $(HOME)/.config/lxqt/panel.conf
@@ -14,6 +15,7 @@ install:
 	mkdir -p $(backupDir)
 	if [ -e $(bashrcTarget) ]; then mv -v $(bashrcTarget) $(backupDir)/ && ln -s $(PWD)/bashrc $(bashrcTarget); fi
 	if [ -e $(bashprofileTarget) ]; then mv -v $(bashprofileTarget) $(backupDir)/ && ln -s $(PWD)/bashrc $(bashprofileTarget); fi
+	if [ -e $(bashaliasesTarget) ]; then mv -v $(bashaliasesTarget) $(backupDir)/ && ln -s $(PWD)/bash_aliases $(bashprofileTarget); fi
 	if [ -e $(inputrcTarget)  ]; then mv -v $(inputrcTarget) $(backupDir)/ && ln -s $(PWD)/inputrc $(inputrcTarget); fi
 	if [ -e $(xkbmapTarget)  ]; then mv -v $(xkbmapTarget) $(backupDir)/ && ln -s $(PWD)/Xkbmap $(xkbmapTarget); fi
 	if [ -e $(lxqtpanelTarget) ]; then mv -v $(lxqtpanelTarget) $(backupDir)/ && ln -s $(PWD)/lxqtpanel.conf $(lxqtpanelTarget); fi
@@ -26,6 +28,7 @@ install:
 uninstall:
 	if [ -e $(bashrcTarget) ]; then unlink $(bashrcTarget) && mv -v $(backupDir)/`echo $(bashrcTarget) | awk -F'/' '{ print $$NF }' -` $(bashrcTarget); fi
 	if [ -e $(bashprofileTarget) ]; then unlink $(bashprofileTarget) && mv -v $(backupDir)/`echo $(bashprofileTarget) | awk -F'/' '{ print $$NF }' -` $(bashprofileTarget); fi
+	if [ -e $(bashaliasesTarget) ]; then unlink $(bashaliasesTarget) && mv -v $(backupDir)/`echo $(bashaliasesTarget) | awk -F'/' '{ print $$NF }' -` $(bashaliasesTarget); fi
 	if [ -e $(inputrcTarget) ]; then unlink $(inputrcTarget) && mv -v $(backupDir)/`echo $(inputrcTarget) | awk -F'/' '{ print $$NF }'` $(inputrcTarget); fi
 	if [ -e $(xkbmapTarget) ]; then unlink $(xkbmapTarget) && mv -v $(backupDir)/`echo $(xkbmapTarget) | awk -F'/' '{ print $$NF }'` $(xkbmapTarget); fi
 	if [ -e $(lxqtpanelTarget) ]; then unlink $(lxqtpanelTarget) && mv -v $(backupDir)/`echo $(lxqtpanelTarget) | awk -F'/' '{ print $$NF }'` $(lxqtpanelTarget); fi
