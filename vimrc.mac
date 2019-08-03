@@ -1,0 +1,99 @@
+setglobal nocompatible
+let mapleader=","
+setglobal pastetoggle=<leader>p
+
+" plug stuff
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+Plug 'jamessan/vim-gnupg'
+Plug 'scrooloose/nerdtree'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-sensible'
+" Plug 'jlanzarotta/bufexplorer'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'tpope/vim-fugitive'
+Plug 'lifepillar/vim-mucomplete'
+
+call plug#end()
+
+silent! colorscheme jellybeans
+let g:airline_theme='jellybeans'
+
+set number
+set relativenumber
+
+" upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
+
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+"nmap <C-\> :NERDTreeFind<CR>
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+
+" Statusline always active
+set laststatus=2
+
+" mucomplete's stuff
+set completeopt+=menuone
+set completeopt+=noselect
+let g:mucomplete#enable_auto_at_startup = 1
+
+" https://github.com/vim/vim/blob/master/runtime/doc/russian.txt
+" Enable hotkeys for Russian layout
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+if has('mouse')
+  set mouse=a
+endif
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+set ttyfast
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile
+
+" Indent stuff
+set autoindent
+" set expandtab
+set noexpandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
+nmap j gj
+nmap k gk
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
