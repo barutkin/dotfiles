@@ -36,5 +36,5 @@ restore original dotfiles from backup
 I recommend
 * using bash as instructions say `chsh -s /bin/bash`
 * using [pbondoer/vim-42header](https://github.com/pbondoer/vim-42header) and setting enviromental variable MAIL for 42 header
-* setting `alias gcc='gcc -Wall -Wextra -Werror'` and `alias norminette='norminette -R CheckForbiddenSourceHeader'` (see my `.bash_aliases` and `.bashrc` files)
+* setting `alias gcc='gcc -Wall -Wextra -Werror'` and `alias norminette='norminette -R CheckForbiddenSourceHeader'` (check my `.bash_aliases` and `.bashrc` files)
 
