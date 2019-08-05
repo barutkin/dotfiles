@@ -30,4 +30,4 @@ restore original dotfiles from backup
 ### Editing
 
 * `gcc` - toggle commenting [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
-* <tab> - autocomplete [lifepillar/vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
+* `<tab>` - autocomplete [lifepillar/vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
