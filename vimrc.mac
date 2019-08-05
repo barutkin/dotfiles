@@ -26,6 +26,8 @@ Plug 'tpope/vim-sensible'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-mucomplete'
+" Plug 'lyokha/vim-xkbswitch'
+" Plug 'myshov/xkbswitch-macosx'
 
 call plug#end()
 
@@ -58,7 +60,7 @@ let g:mucomplete#enable_auto_at_startup = 1
 
 " https://github.com/vim/vim/blob/master/runtime/doc/russian.txt
 " Enable hotkeys for Russian layout
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+" set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 if has('mouse')
   set mouse=r
