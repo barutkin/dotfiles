@@ -31,3 +31,10 @@ restore original dotfiles from backup
 
 * `gcc` - toggle commenting [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 * `<tab>` - autocomplete [lifepillar/vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
+
+## 42
+I recommend
+* using bash as instructions say `chsh -s /bin/bash`
+* using [pbondoer/vim-42header](https://github.com/pbondoer/vim-42header) and setting enviromental variable MAIL for 42 header
+* setting `alias gcc='gcc -Wall -Wextra -Werror'` and `alias norminette='norminette -R CheckForbiddenSourceHeader'` (see my `.bash_aliases` and `.bashrc` files)
+
