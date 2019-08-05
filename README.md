@@ -19,13 +19,13 @@ restore original dotfiles from backup
 
 ### File Tree and buffers
 
-* <kbd><leader><leader><kbd> - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
-* <kbd><ctrl>h</kbd> - move left to left split
-* <kbd><ctrl>l</kbd> - move right to right split
-* <kbd><ctrl>k</kbd> - move up to top split
-* <kbd><ctrl>j</kbd> - move down to bottom split
-* <kbd><leader>b</kbd> - show buffer list [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
-* <kbd>gb</kbd> and <kbd>gB</kbd> to flip through the most-recently used buffer stack
+* <kbd>leader</kbd><kbd>leader></kbd> - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+* <kbd>ctrl</kbd><kbd>h</kbd> - move left to left split
+* <kbd>ctrl</kbd><kbd>l</kbd> - move right to right split
+* <kbd>ctrl</kbd><kbd>k</kbd> - move up to top split
+* <kbd>ctrl<kbd><kbd>j</kbd> - move down to bottom split
+* <kbd>leader</kbd><kbd>b</kbd> - show buffer list [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
+* <kbd>g</kbd><kbd>b</kbd> and <kbd>g</kbd><kbd>B</kbd> to flip through the most-recently used buffer stack
 
 ### Editing
 
