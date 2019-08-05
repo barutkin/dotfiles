@@ -155,3 +155,6 @@ vim()
 
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
+
+# export my 42email
+export MAIL='rjeraldi@student.21-school.ru'
