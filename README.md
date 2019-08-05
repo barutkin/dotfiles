@@ -13,19 +13,19 @@ restore original dotfiles from backup
 ### Main
 
 * [Why vim (in russian)](https://guides.hexlet.io/vim/)
-* Switch ctrl and caps lock
-* Use <kbd>ctrl + [</kbd> instead of <kbd>esc</kdb>
+* Switch <kbd><ctrl></kbd> and <kbd><caps></kbd>
+* Use <kbd><ctrl>[</kbd> instead of <kbd>esc</kdb>
 * Plugin manager [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 ### File Tree and buffers
 
-* `<leader><leader>` [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
-* `ctrl h` - move left to left split
-* `ctrl l` - move right to right split
-* `ctrl k` - move up to top split
-* `ctrl j` - move down to bottom split
-* `<leader> b` - show buffer list [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
-* `gb` and `gB` to flip through the most-recently used buffer stack
+* <kbd><leader><leader><kbd> - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+* <kbd><ctrl>h</kbd> - move left to left split
+* <kbd><ctrl>l</kbd> - move right to right split
+* <kbd><ctrl>k</kbd> - move up to top split
+* <kbd><ctrl>j</kbd> - move down to bottom split
+* <kbd><leader>b</kbd> - show buffer list [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
+* <kbd>gb</kbd> and <kbd>gB</kbd> to flip through the most-recently used buffer stack
 
 ### Editing
 
