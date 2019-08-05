@@ -23,14 +23,14 @@ restore original dotfiles from backup
 * <kbd>ctrl</kbd><kbd>h</kbd> - move left to left split
 * <kbd>ctrl</kbd><kbd>l</kbd> - move right to right split
 * <kbd>ctrl</kbd><kbd>k</kbd> - move up to top split
-* <kbd>ctrl<kbd><kbd>j</kbd> - move down to bottom split
+* <kbd>ctrl</kbd><kbd>j</kbd> - move down to bottom split
 * <kbd>leader</kbd><kbd>b</kbd> - show buffer list [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
 * <kbd>g</kbd><kbd>b</kbd> and <kbd>g</kbd><kbd>B</kbd> to flip through the most-recently used buffer stack
 
 ### Editing
 
-* `gcc` - toggle commenting [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
-* `<tab>` - autocomplete [lifepillar/vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
+* <kbd>g</kbd><kbd>c</kbd><kbd>c</kbd> - toggle commenting [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+* <kbd>tab</kbd> - autocomplete [lifepillar/vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
 
 ## 42
 I recommend
