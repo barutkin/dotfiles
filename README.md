@@ -13,8 +13,8 @@ restore original dotfiles from backup
 ### Main
 
 * [Why vim (in russian)](https://guides.hexlet.io/vim/)
-* Switch <kbd><ctrl></kbd> and <kbd><caps></kbd>
-* Use <kbd><ctrl>[</kbd> instead of <kbd>esc</kdb>
+* Switch <kbd>ctrl</kbd> and <kbd>caps</kbd>
+* Use <kbd>ctrl</kbd><kbd>[</kbd> instead of <kbd>esc</kdb>
 * Plugin manager [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 ### File Tree and buffers
