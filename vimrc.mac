@@ -61,7 +61,7 @@ let g:mucomplete#enable_auto_at_startup = 1
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 if has('mouse')
-  set mouse=a
+  set mouse=r
 endif
 
 " Don't redraw while executing macros (good performance config)
