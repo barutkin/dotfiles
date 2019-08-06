@@ -157,4 +157,4 @@ vim()
 unset use_color sh
 
 # export my 42email
-export MAIL='rjeraldi@student.21-school.ru'
+# export MAIL='rjeraldi@student.21-school.ru'

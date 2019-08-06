@@ -28,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-mucomplete'
 " Plug 'lyokha/vim-xkbswitch'
 " Plug 'myshov/xkbswitch-macosx'
-Plug 'pbondoer/vim-42header'
+" Plug 'pbondoer/vim-42header'
 " auto-closing
 Plug 'kana/vim-smartinput'
 
