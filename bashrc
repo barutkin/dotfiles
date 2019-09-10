@@ -54,10 +54,10 @@ fi
 # Change the window title of X terminals 
 case ${TERM} in
 	[aEkx]term*|rxvt*|gnome*|konsole*|interix)
-		PS1='\[\033]0;\u@\h:\w\007\]'
+		PS1='\[\033]0;\u@\h:\W\007\]'
 		;;
 	screen*)
-		PS1='\[\033k\u@\h:\w\033\\\]' && export PROMPT_COMMAND='echo -n -e "\033k\033\\"'
+		PS1='\[\033k\u@\h:\W\033\\\]' && export PROMPT_COMMAND='echo -n -e "\033k\033\\"'
 		;;
 	*)
 		unset PS1
