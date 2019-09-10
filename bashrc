@@ -1,5 +1,5 @@
 # /etc/bash/bashrc
-#
+
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
 # that can't tolerate any output.  So make sure this doesn't display
@@ -144,6 +144,7 @@ test -s ~/.bash_aliases && . ~/.bash_aliases || true
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Disable flow control in .bashrc for vim mapping
 vim()
 {
 	local STTYOPTS="$(stty -g)"
@@ -154,3 +155,6 @@ vim()
 
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
+
+# export my 42email
+# export MAIL='rjeraldi@student.21-school.ru'
