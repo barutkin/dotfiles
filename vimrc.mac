@@ -32,6 +32,7 @@ Plug 'lifepillar/vim-mucomplete'
 " auto-closing
 " Plug 'kana/vim-smartinput'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux'
 
 call plug#end()
 
