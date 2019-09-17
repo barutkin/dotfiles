@@ -1,5 +1,10 @@
 # .bash_profile
 
+# homebrew tweak to work on 42 session
+if [ "$(uname)" == "Darwin" ]; then
+	source $HOME/.brewconfig.zsh
+fi
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
