@@ -30,9 +30,10 @@ Plug 'lifepillar/vim-mucomplete'
 " Plug 'myshov/xkbswitch-macosx'
 " Plug 'pbondoer/vim-42header'
 " auto-closing
-" Plug 'kana/vim-smartinput'
+Plug 'kana/vim-smartinput'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
