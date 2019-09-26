@@ -4,6 +4,8 @@
 if [ "$(uname)" == "Darwin" ]; then
 	source $HOME/.brewconfig.zsh
 fi
+# 42_cache clean
+rm -rf ~/Library/*42_cache_bak*
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
