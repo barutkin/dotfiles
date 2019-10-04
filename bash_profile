@@ -6,6 +6,7 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 # 42_cache clean
 rm -rf ~/Library/*42_cache_bak*
+rm -rf ~/*42_cache_bak*
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
