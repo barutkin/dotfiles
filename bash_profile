@@ -7,7 +7,7 @@ fi
 # 42
 rm -rf ~/Library/*42_cache_bak*
 rm -rf ~/*42_cache_bak*
-find ~/ -name ".DS_Store"  -exec rm {} \;
+find ~/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
