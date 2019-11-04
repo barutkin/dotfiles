@@ -30,5 +30,5 @@ logout () {
 }
 
 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist 2>/dev/null
 find ~/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
