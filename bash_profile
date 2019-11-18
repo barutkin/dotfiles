@@ -6,7 +6,7 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 # 42
 rm -rf ~/Library/*42_cache_bak*
-rm -rf ~/*42_cache_bak*
+rm -rf ~/.*42_cache_bak*
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -22,7 +22,8 @@ fi
 
 # 42 logout with backup
 backup () {
-	rsync -avP -e 'ssh -p 6522' --exclude-from=/Users/rjeraldi/rsync.exclude --delete-after /Users/rjeraldi/ barutkin@109.202.17.2:/home/edu/IT/21-school/rjeraldi.backup/ >> /Users/rjeraldi/rjeraldi.backup.log 2>&1 ;
+	rsync -avP -e 'ssh -p 6522' --exclude-from=/Users/rjeraldi/rsync.exclude --delete-after --exclude="Library" /Users/rjeraldi/ barutkin@109.202.17.2:/home/edu/IT/21-school/rjeraldi.backup/ >> /Users/rjeraldi/rjeraldi.backup.log 2>&1 ;
+	rsync -aLvP -e 'ssh -p 6522' --delete-after /Users/rjeraldi/Library barutkin@109.202.17.2:/home/edu/IT/21-school/rjeraldi.backup/ >> /Users/rjeraldi/rjeraldi.backup.log 2>&1 ;
 }
 logout () {
 	backup;
