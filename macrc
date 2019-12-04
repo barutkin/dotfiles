@@ -1,0 +1,234 @@
+# macOS system preferences
+
+# Close System Preferences
+osascript -e 'tell application "System Preferences" to quit'
+
+# Prevent .DS_Store file creation over network connections
+defaults write com.apple.desktopservices DSDontWriteNetworkStores TRUE
+
+# Use dark menu bar and Dock
+defaults write AppleInterfaceStyle -string "Dark"
+
+# Automaticaly hide and show the menu bar
+defaults write _HIHideMenuBar -bool true
+
+# Show scroll bars
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write AppleShowScrollBars istring "WhenScrolling"
+
+# Disable natural scroll direction
+defaults write ~/Library/Preferences/.GlobalPreferences.plist com.apple.swipescrolldirection -bool False
+# Correct spelling automaticaly
+defaults write ~/Library/Preferences/.GlobalPreferences.plist WebAutomaticSpellingCorrectionEnabled -bool False
+# Correct spelling automaticaly
+defaults write ~/Library/Preferences/.GlobalPreferences.plist NSAutomaticSpellingCorrectionEnabled -bool False
+# Capitalize words automaticaly
+defaults write ~/Library/Preferences/.GlobalPreferences.plist NSAutomaticCapitalizationEnabled -bool False
+
+# Allow Handoff between this Mac and your iCloud devices
+defaults write ActivityAdvertisingAllowed -bool false
+defaults write ActivityReceivingAllowed -bool false
+
+# Dock magnification
+defaults write com.apple.dock magnification -bool false
+# Dock size
+defaults write com.apple.dock tilesize -int 40
+# Dock position on screen
+defaults write com.apple.dock orientation -string left
+# Automaticaly hide the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Right top corner: Launchpad
+defaults write com.apple.dock wvous-tr-corner -int 3
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# Right bottom corner: Desktop
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-modifier -int 0
+# Left bottom corner: Launchpad
+defaults write com.apple.dock wvous-bl-corner -int 11
+defaults write com.apple.dock wvous-bl-modifier -int 0
+# Left top corner: Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+
+# Require password after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Show mirroring options in the menu bar when available
+defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+
+# Key Repeat
+defaults write KeyRepeat -int 2
+# Delay Until Repeat
+defaults write InitialKeyRepeat -int 15
+
+# Save screenshots to
+defaults write com.apple.screencapture location -string "${HOME}/Pictres"
+# Save screenshots in PNG format
+# Other options: BMP, GIF, JPG, PDF, TIFF
+defaults write com.apple.screencapture type -string "png"
+
+# Finder
+# allow quitting via ⌘ + Q, doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder SearchMyDocsLibraryBrowseWithCustomViewStyle -bool false
+defaults write com.apple.finder MyDocsLibrarySavedViewStyle -string Nlsv
+defaults write com.apple.finder ShowTabView -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowPreviewPane -bool true
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+# Show the /Volumes folder
+#sudo chflags nohidden /Volumes
+
+# Set language
+defaults write NSGlobalDomain AppleLanguages -array "en-RU" "ru-RU"
+
+# Native full screen window
+defaults write com.googlecode.iterm2 UseLionStyleFullscreen -bool false
+# Confirm 'Quit iTerm2'
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+# Confirm closing multiple sessions
+defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
+# Quit when all windows are closed
+defaults write com.googlecode.iterm2 QuitWhenAllWindowsClosed -bool true
+
+# Keyboard
+# Use F1, F2, etc. keys as standart function keys
+defaults write com.apple.keyboard.fnState -bool true
+# Copy picture of selected area to the clipboard: F19
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 31 "
+<dict>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<dict>
+				<key>parameters</key>
+				<array>
+						<integer>65535</integer>
+						<integer>80</integer>
+						<integer>8388608</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+		</dict>
+</dict>
+"
+# Save picture of selected area as a fiel: F18
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 30 "
+<dict>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<dict>
+				<key>parameters</key>
+				<array>
+						<integer>65535</integer>
+						<integer>79</integer>
+						<integer>8388608</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+		</dict>
+</dict>
+"
+# Copy a picture of screen to the clipboard: F17
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 29 "
+<dict>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<dict>
+				<key>parameters</key>
+				<array>
+						<integer>65535</integer>
+						<integer>64</integer>
+						<integer>8388608</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+		</dict>
+</dict>
+"
+# Save picture of screen as a file: F16
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 28 "
+<dict>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<dict>
+				<key>parameters</key>
+				<array>
+						<integer>65535</integer>
+						<integer>106</integer>
+						<integer>8388608</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+		</dict>
+</dict>
+"
+# Select the previous input source: Ctrl-Space
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
+<dict>
+		<key>enabled</key>
+		<true/>
+		<key>value</key>
+		<dict>
+				<key>parameters</key>
+				<array>
+						<integer>32</integer>
+						<integer>49</integer>
+						<integer>262144</integer>
+				</array>
+				<key>type</key>
+				<string>standard</string>
+		</dict>
+</dict>
+"
+# Swap Ctrl<->Caps
+defaults write com.apple.keyboard.modifiermapping.1452-620-0 -array-add "
+<dict>
+		<key>HIDKeyboardModifierMappingDst</key>
+		<integer>30064771296</integer>
+		<key>HIDKeyboardModifierMappingSrc</key>
+		<integer>30064771129</integer>
+</dict>
+<dict>
+		<key>HIDKeyboardModifierMappingDst</key>
+		<integer>30064771129</integer>
+		<key>HIDKeyboardModifierMappingSrc</key>
+		<integer>30064771296</integer>
+</dict>
+<dict>
+		<key>HIDKeyboardModifierMappingDst</key>
+		<integer>30064771129</integer>
+		<key>HIDKeyboardModifierMappingSrc</key>
+		<integer>30064771300</integer>
+</dict>
+"
+# osascript -e '
+# tell application "System Preferences"
+#     reveal anchor "keyboardTab" of pane "com.apple.preference.keyboard"
+# end tell
+# tell application "System Events" to tell window 1 of process "System Preferences"
+#     click button "Modifier Keys…" of tab group 1
+#     tell sheet 1
+#         tell pop up button 1
+#             click
+#             click menu item "Control" of menu 1
+#         end tell
+#         tell pop up button 2
+#             click
+#             click menu item "Caps Lock" of menu 1
+#         end tell
+#         click button "OK"
+#     end tell
+# end tell
+# quit application "System Preferences"
+# '
+
+# 
+killall Dock

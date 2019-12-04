@@ -2,11 +2,21 @@
 
 # homebrew tweak to work on 42 session
 if [ "$(uname)" == "Darwin" ]; then
+	user42=rjeraldi
+	uid42=10657
+	source $HOME/.macrc
 	source $HOME/.brewconfig.zsh
+	find $HOME/ -name "*42_cache_bak*" -exec rm -rv {} 2>&1 >> $HOME/$user42.cacheclean.log \;
+	find $HOME/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
+	backup () {
+		rsync -avP -e 'ssh -p 6522' --exclude-from=$HOME/rsync.exclude --delete-after --exclude="Library" $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1
+		rsync -aLvP -e 'ssh -p 6522' --delete-after $HOME/Library barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+	}
+	logout () {
+		backup;
+		launchctl bootout user/$uid42;
+	}
 fi
-# 42
-rm -rf ~/Library/*42_cache_bak*
-rm -rf ~/.*42_cache_bak*
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -20,15 +30,3 @@ if [ $TERM == linux ]; then
     sudo bash -c "(dumpkeys | grep keymaps; echo 'keycode  29 = Caps_Lock') | loadkeys"
 fi
 
-# 42 logout with backup
-backup () {
-	rsync -avP -e 'ssh -p 6522' --exclude-from=/Users/rjeraldi/rsync.exclude --delete-after --exclude="Library" /Users/rjeraldi/ barutkin@109.202.17.2:/home/edu/IT/21-school/rjeraldi.backup/ >> /Users/rjeraldi/rjeraldi.backup.log 2>&1 ;
-	rsync -aLvP -e 'ssh -p 6522' --delete-after /Users/rjeraldi/Library barutkin@109.202.17.2:/home/edu/IT/21-school/rjeraldi.backup/ >> /Users/rjeraldi/rjeraldi.backup.log 2>&1 ;
-}
-logout () {
-	backup;
-	launchctl bootout user/10657;
-}
-
-
-find ~/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
