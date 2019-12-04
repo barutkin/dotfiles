@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		backup;
 		launchctl bootout user/$uid42;
 	}
-f
+fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -29,4 +29,3 @@ if [ $TERM == linux ]; then
     sudo bash -c "(dumpkeys | grep keymaps; echo 'keycode  58 = Control') | loadkeys"
     sudo bash -c "(dumpkeys | grep keymaps; echo 'keycode  29 = Caps_Lock') | loadkeys"
 fi
-
