@@ -50,6 +50,8 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Left top corner: Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
+# Desktop background
+#sqlite3 $HOME/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$HOME/Pictures/vim_cheat_sheet_for_programmers_print.png'"
 
 # Require password after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
