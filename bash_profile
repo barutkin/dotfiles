@@ -11,6 +11,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	backup () {
 		rsync -avP -e 'ssh -p 6522' --exclude-from=$HOME/rsync.exclude --delete-after --exclude="Library" $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1
 		rsync -aLvP -e 'ssh -p 6522' --delete-after $HOME/Library barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+		rsync -aLvP -e 'ssh -p 6522' --delete-after $HOME/goinfre barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
 	}
 	logout () {
 		backup;
