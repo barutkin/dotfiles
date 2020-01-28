@@ -1,7 +1,8 @@
 # .bash_profile
 
-# homebrew tweak to work on 42 session
+# homebrew tweak to work on 42 session etc.
 if [ "$(uname)" == "Darwin" ]; then
+	export TMUX_TMPDIR=$HOME/tmp
 	user42=rjeraldi
 	uid42=10657
 	source $HOME/.brewconfig.zsh
@@ -9,9 +10,8 @@ if [ "$(uname)" == "Darwin" ]; then
 	find $HOME/Library/ -name "*42_cache_bak*" -exec rm -rv {} >> $HOME/$user42.cacheclean.log 2>&1 \;
 	# find $HOME/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
 	backup () {
-		rsync -avP -e 'ssh -p 6522' --exclude-from=$HOME/rsync.exclude --delete-after --exclude="Library" $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1
-		rsync -aLvP -e 'ssh -p 6522' --delete-after $HOME/Library barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
-		rsync -aLvP -e 'ssh -p 6522' --delete-after $HOME/goinfre barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+		rsync -avP -e 'ssh -p 6522' --exclude-from=$HOME/rsync.exclude --delete-after $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+		rsync -aLvP -e 'ssh -p 6522' --exclude-from=$HOME/rsync.exclude --delete-after $HOME/goinfre barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
 	}
 	logout () {
 		backup;
