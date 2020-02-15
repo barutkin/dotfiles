@@ -1,6 +1,6 @@
 setglobal nocompatible
-let mapleader=","
-setglobal pastetoggle=<leader>p
+let mapleader="\<Space>"
+setglobal pastetoggle=<F2>
 
 " plug stuff
 if empty(glob('~/.vim/autoload/plug.vim'))
