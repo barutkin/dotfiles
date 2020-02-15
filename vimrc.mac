@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'myshov/xkbswitch-macosx'
 " Plug 'pbondoer/vim-42header'
 " Plug 'kana/vim-smartinput' " auto-closing
+
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
@@ -249,13 +250,18 @@ set autowrite     " Automatically :write before running commands
 
 " Indent stuff
 set autoindent
-set noexpandtab
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-autocmd FileType php setlocal expandtab
 set list " show all white spaces as a characters
 set colorcolumn=80
+
+augroup FileTypeTetect
+  autocmd!
+  autocmd BufEnter Makefile setlocal noexpandtab
+  autocmd FileType c setlocal noexpandtab
+augroup END
 
 " Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
 " nmap j gj
