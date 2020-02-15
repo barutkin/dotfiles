@@ -107,7 +107,7 @@ set complete+=kspell
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 if has('mouse')
-  set mouse=r
+  set mouse=a
 endif
 
 "" CoC
