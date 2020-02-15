@@ -80,6 +80,17 @@ let g:airline_theme='jellybeans'
 
 set number
 set relativenumber
+set cursorline
+set nofoldenable
+set wrap
+set linebreak
+set hlsearch
+set ignorecase
+set smartcase
+" set splitbelow
+set scrolloff=3
+
+set showcmd
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -91,7 +102,7 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-"nmap <C-\> :NERDTreeFind<CR>
+nmap <C-m> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
 " Statusline always active
@@ -251,17 +262,23 @@ set autowrite     " Automatically :write before running commands
 " Indent stuff
 set autoindent
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set list " show all white spaces as a characters
 set colorcolumn=80
 
 augroup FileTypeTetect
   autocmd!
   autocmd BufEnter Makefile setlocal noexpandtab
-  autocmd FileType c setlocal noexpandtab
+  autocmd FileType c setlocal noexpandtab ts=4 sts=4 sw=4
 augroup END
+
+" format the entire file
+nnoremap ff :normal! gg=G``<CR>
+
+" set text wrapping toggles
+nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
 " nmap j gj
