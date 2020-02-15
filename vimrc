@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-sensible'
 " Plug 'jlanzarotta/bufexplorer'
-Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-fugitive'
 " Plug 'lifepillar/vim-mucomplete'
 " Plug 'lyokha/vim-xkbswitch'
@@ -276,6 +276,7 @@ augroup FileTypeTetect
   autocmd!
   autocmd BufEnter Makefile setlocal noexpandtab
   autocmd FileType c setlocal noexpandtab ts=4 sts=4 sw=4
+  autocmd FileType php setlocal ts=4 sts=4 sw=4
 augroup END
 
 " format the entire file
@@ -294,6 +295,11 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bd<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
