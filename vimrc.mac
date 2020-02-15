@@ -97,9 +97,9 @@ nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 " Statusline always active
 set laststatus=2
 
-" mucomplete's stuff
-" set completeopt+=menuone
-" set completeopt+=noselect
+set completeopt=noinsert,menuone,noselect
+set complete+=kspell
+
 " let g:mucomplete#enable_auto_at_startup = 1
 
 " https://github.com/vim/vim/blob/master/runtime/doc/russian.txt
