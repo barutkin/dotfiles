@@ -37,6 +37,11 @@ Plug 'lifepillar/vim-mucomplete'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
+" php
+Plug 'jwalton512/vim-blade', { 'for': 'php' }
+Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
+Plug 'noahfrederick/vim-composer', { 'for': 'php' }
+Plug 'noahfrederick/vim-laravel', { 'for': 'php' }
 
 call plug#end()
 
@@ -84,17 +89,16 @@ set nobackup
 set nowritebackup
 set nowb
 set noswapfile
+set autowrite     " Automatically :write before running commands
 
 " Indent stuff
 set autoindent
-" set expandtab
 set noexpandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-" global scope bad aligned
-set list
-" 42 stuff
+autocmd FileType php setlocal expandtab
+set list " global scope bad aligned
 set colorcolumn=80
 
 " Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
