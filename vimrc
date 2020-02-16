@@ -312,6 +312,8 @@ nnoremap <leader>bd :bd<CR>
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :waq<CR>
+
 nnoremap <Leader>o :GFiles .<CR>
 nnoremap <leader>fc :Commits<CR>
 nnoremap <leader>ff :Files<CR>
