@@ -86,6 +86,7 @@ let g:airline_theme='jellybeans'
 set number
 set relativenumber
 set cursorline
+set cursorcolumn
 set nofoldenable
 set wrap
 set linebreak
