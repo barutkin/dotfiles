@@ -319,7 +319,7 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>w :wa<CR>
 nnoremap <Leader>q :waq<CR>
 
 nmap <silent> // :nohlsearch<CR>
