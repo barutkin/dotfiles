@@ -11,21 +11,24 @@ endif
 
 call plug#begin()
 
-Plug 'jamessan/vim-gnupg'
 Plug 'scrooloose/nerdtree'
-Plug 'wellle/targets.vim'
-Plug 'tpope/vim-surround'
+Plug 'severin-lemaignan/vim-minimap'
+
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'tpope/vim-commentary'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
-Plug 'tpope/vim-sensible'
+
+Plug 'tpope/vim-fugitive'
 " Plug 'jlanzarotta/bufexplorer'
 " Plug 'jeetsukumaran/vim-buffergator'
-Plug 'tpope/vim-fugitive'
 " Plug 'lifepillar/vim-mucomplete'
 " Plug 'lyokha/vim-xkbswitch'
 " Plug 'myshov/xkbswitch-macosx'
@@ -35,7 +38,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
-" php
+
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'noahfrederick/vim-composer', { 'for': 'php' }
@@ -72,6 +75,8 @@ let g:coc_global_extensions = [
       \ 'coc-docker',
       \ 'coc-diagnostic',
       \]
+
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 
@@ -312,6 +317,11 @@ nnoremap <leader>fa :Ag<CR>
 
 nmap <silent> // :nohlsearch<CR>
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
+
+let g:minimap_toggle='<leader>mm'
+let g:minimap_show='<leader>ms'
+let g:minimap_close='<leader>mc'
+let g:minimap_update='<leader>mu'
 
 " Allows you to enter sudo pass and save the file
 " " when you forgot to open your file with sudo
