@@ -258,7 +258,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 set lazyredraw
 set ttyfast
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in SVN, git etc anyway...
 set nobackup
 set nowritebackup
 set nowb
@@ -319,10 +319,7 @@ nnoremap <leader>fa :Ag<CR>
 nmap <silent> // :nohlsearch<CR>
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
 
-let g:minimap_toggle='<leader>mm'
-let g:minimap_show='<leader>ms'
-let g:minimap_close='<leader>mc'
-let g:minimap_update='<leader>mu'
+nnoremap <Leader>mm :MinimapToggle<CR>
 
 " Allows you to enter sudo pass and save the file
 " " when you forgot to open your file with sudo
