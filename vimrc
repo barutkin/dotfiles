@@ -27,6 +27,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 " Plug 'jlanzarotta/bufexplorer'
 " Plug 'jeetsukumaran/vim-buffergator'
 " Plug 'lifepillar/vim-mucomplete'
