@@ -303,6 +303,11 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+nnoremap <Leader>o :GFiles .<CR>
+nnoremap <leader>fc :Commits<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fa :Ag<CR>
+
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
@@ -310,14 +315,12 @@ nnoremap <leader>bd :bd<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :waq<CR>
-
-nnoremap <Leader>o :GFiles .<CR>
-nnoremap <leader>fc :Commits<CR>
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fa :Ag<CR>
 
 nmap <silent> // :nohlsearch<CR>
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
