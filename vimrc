@@ -11,21 +11,25 @@ endif
 
 call plug#begin()
 
-Plug 'jamessan/vim-gnupg'
 Plug 'scrooloose/nerdtree'
-Plug 'wellle/targets.vim'
-Plug 'tpope/vim-surround'
+Plug 'severin-lemaignan/vim-minimap'
+
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'tpope/vim-commentary'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
-Plug 'tpope/vim-sensible'
-" Plug 'jlanzarotta/bufexplorer'
-Plug 'jeetsukumaran/vim-buffergator'
+
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+" Plug 'jlanzarotta/bufexplorer'
+" Plug 'jeetsukumaran/vim-buffergator'
 " Plug 'lifepillar/vim-mucomplete'
 " Plug 'lyokha/vim-xkbswitch'
 " Plug 'myshov/xkbswitch-macosx'
@@ -35,7 +39,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
-" php
+
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'noahfrederick/vim-composer', { 'for': 'php' }
@@ -73,6 +77,8 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \]
 
+Plug 'jamessan/vim-gnupg'
+
 call plug#end()
 
 silent! colorscheme jellybeans
@@ -81,6 +87,7 @@ let g:airline_theme='jellybeans'
 set number
 set relativenumber
 set cursorline
+set cursorcolumn
 set nofoldenable
 set wrap
 set linebreak
@@ -252,12 +259,16 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 set lazyredraw
 set ttyfast
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in SVN, git etc anyway...
 set nobackup
 set nowritebackup
 set nowb
 set noswapfile
 set autowrite     " Automatically :write before running commands
+
+" Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
+" nmap j gj
+" nmap k gk
 
 " Indent stuff
 set autoindent
@@ -272,6 +283,7 @@ augroup FileTypeTetect
   autocmd!
   autocmd BufEnter Makefile setlocal noexpandtab
   autocmd FileType c setlocal noexpandtab ts=4 sts=4 sw=4
+  autocmd FileType php setlocal ts=4 sts=4 sw=4
 augroup END
 
 " format the entire file
@@ -279,10 +291,6 @@ nnoremap ff :normal! gg=G``<CR>
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-
-" Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
-" nmap j gj
-" nmap k gk
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -294,5 +302,33 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <Leader>o :GFiles .<CR>
+nnoremap <leader>fc :Commits<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fa :Ag<CR>
+
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bd<CR>
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+nnoremap <Leader>w :wa<CR>
+nnoremap <Leader>q :qa<CR>
+
+nmap <silent> // :nohlsearch<CR>
+noremap <leader>hl :set hlsearch! hlsearch?<CR>
+
+nnoremap <Leader>mm :MinimapToggle<CR>
+
+" Allows you to enter sudo pass and save the file
+" " when you forgot to open your file with sudo
+cmap w!! %!sudo tee > /dev/null %
 
 let g:vista_default_executive = 'coc'
