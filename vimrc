@@ -320,7 +320,7 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 nnoremap <Leader>w :wa<CR>
-nnoremap <Leader>q :waq<CR>
+nnoremap <Leader>q :qa<CR>
 
 nmap <silent> // :nohlsearch<CR>
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
