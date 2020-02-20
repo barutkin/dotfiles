@@ -284,7 +284,6 @@ augroup FileTypeTetect
   autocmd BufEnter Makefile setlocal noexpandtab
   autocmd FileType c setlocal noexpandtab ts=4 sts=4 sw=4
   autocmd FileType php setlocal ts=4 sts=4 sw=4
-  autocmd FileType yaml setlocal noexpandtab
 augroup END
 
 " format the entire file
