@@ -51,6 +51,9 @@ if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
         printf "\033]2;local:`ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d : -f 2`\033\\"
 fi 
 
+# curl -o $HOME/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+source $HOME/.git-prompt.sh
+
 # Change the window title of X terminals 
 case ${TERM} in
 	[aEkx]term*|rxvt*|gnome*|konsole*|interix)
@@ -115,7 +118,7 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1+='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
 	else
-		PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] '
+    PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\]$(__git_ps1 " (%s)") \w\n\[\033[01;32m\]└─\[\033[01;34m\]\$\[\033[00m\] '
 	fi
 
 	if [ "$(uname)" == "Darwin" ]; then
