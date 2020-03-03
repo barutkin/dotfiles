@@ -12,6 +12,9 @@ if [ "$(uname)" == "Darwin" ]; then
 	# You can set that up like this:
 	#   PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
 	#   echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"' >> ~/.bash_profile
+  export LC_ALL=en_US.UTF-8
+
+	[[ -r "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh" ]] && . "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh"
 
 	export TMUX_TMPDIR=$HOME/tmp
 	user42=rjeraldi
