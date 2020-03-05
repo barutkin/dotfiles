@@ -3,7 +3,7 @@
   "diagnostic.virtualTextPrefix": "# ",
   "solargraph.diagnostics": true,
   "diagnostic-languageserver.filetypes": {
-    "php": "phpcs"
+    "php": "phpcs --standard=PSR12"
   },
   "cSpellExt.enableDictionaries": ["russian"],
   "cSpell.enabledLanguageIds": [
