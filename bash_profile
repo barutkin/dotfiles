@@ -31,6 +31,9 @@ if [ "$(uname)" == "Darwin" ]; then
 		backup;
 		launchctl bootout user/$uid42;
 	}
+  screensaver () {
+    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+  }
 	source $HOME/.macrc
 fi
 
