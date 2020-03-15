@@ -39,19 +39,19 @@ defaults write com.apple.dock orientation -string left
 defaults write com.apple.dock autohide -bool true
 
 # Right top corner: Launchpad
-defaults write com.apple.dock wvous-tr-corner -int 3
-defaults write com.apple.dock wvous-tr-modifier -int 0
+# defaults write com.apple.dock wvous-tr-corner -int 3
+# defaults write com.apple.dock wvous-tr-modifier -int 0
 # Right bottom corner: Desktop
-defaults write com.apple.dock wvous-br-corner -int 4
-defaults write com.apple.dock wvous-br-modifier -int 0
+# defaults write com.apple.dock wvous-br-corner -int 4
+# defaults write com.apple.dock wvous-br-modifier -int 0
 # Left bottom corner: Launchpad
-defaults write com.apple.dock wvous-bl-corner -int 11
-defaults write com.apple.dock wvous-bl-modifier -int 0
+# defaults write com.apple.dock wvous-bl-corner -int 11
+# defaults write com.apple.dock wvous-bl-modifier -int 0
 # Left top corner: Mission Control
-defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 0
+# defaults write com.apple.dock wvous-tl-corner -int 2
+# defaults write com.apple.dock wvous-tl-modifier -int 0
 # Desktop background
-#sqlite3 $HOME/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$HOME/Pictures/vim_cheat_sheet_for_programmers_print.png'"
+sqlite3 $HOME/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$HOME/Pictures/vim_cheat_sheet_for_programmers_print.png'"
 
 # Require password after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -66,7 +66,7 @@ defaults write KeyRepeat -int 2
 defaults write InitialKeyRepeat -int 15
 
 # Save screenshots to
-defaults write com.apple.screencapture location -string "${HOME}/Pictres"
+defaults write com.apple.screencapture location -string "${HOME}/Pictures"
 # Save screenshots in PNG format
 # Other options: BMP, GIF, JPG, PDF, TIFF
 defaults write com.apple.screencapture type -string "png"

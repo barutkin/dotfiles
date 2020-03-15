@@ -139,10 +139,6 @@ else
 	fi
 fi
 
-export GOPATH=$HOME/.gopath
-export PATH=$GOPATH:$GOPATH/bin:~/bin/:$PATH
-
-test -s ~/.bash_aliases && . ~/.bash_aliases || true
 
 GPG_TTY=$(tty)
 export GPG_TTY
