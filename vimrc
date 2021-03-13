@@ -2,6 +2,10 @@ setglobal nocompatible
 let mapleader="\<Space>"
 setglobal pastetoggle=<leader>v
 
+if has('win32') || has('win64')
+  let &shell='cmd.exe'
+endif
+
 " plug stuff
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
