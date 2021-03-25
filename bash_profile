@@ -6,55 +6,55 @@ export PATH_BACKUP=$PATH
 
 test -s ~/.bash_aliases && . ~/.bash_aliases || true
 
-# homebrew tweak to work on 42 session etc.
-if [ "$(uname)" == "Darwin" ]; then
-  usbPath='/Volumes/rjeraldiSSD/rjeraldi'
-  homePath=$HOME
-  chmod -R -a "everyone deny delete,write" /Volumes/rjeraldiSSD/rjeraldi/Library 2>/dev/null
-  chmod -R -a "everyone deny delete,write" $HOME/Library 2>/dev/null
-	for file in {'Franz','Google', 'Royal TSX','TabNine','Vivaldi','com.eltima.cloudmounter','com.lemonmojo.RoyalTSX.App'}; do
-		rm -rf "$homePath/Library/Application Support/$file"
-		ln -sf "$usbPath/Library/Application Support/$file" "$homePath/Library/Application Support/"
-	done
-  # killall Dock
-	# source $HOME/.macrc
-
-  export LC_ALL=en_US.UTF-8
-
-	[[ -r "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh" ]] && . "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh"
-
-
-  export PATH=$HOME/.brew/opt/ruby/bin:$HOME/.brew/lib/ruby/gems/2.6.0/bin:$PATH
-  disable_brewruby () {
-    export PATH=$PATH_BACKUP
-  }
-  # export LDFLAGS="-L$HOME/.brew/opt/ruby/lib"
-  # export CPPFLAGS="-I$HOME/.brew/opt/ruby/include"
-  # export PKG_CONFIG_PATH="$HOME/.brew/opt/ruby/lib/pkgconfig"
-
-	export TMUX_TMPDIR=$HOME/tmp
-	user42=rjeraldi
-	uid42=10657
-	source $HOME/.brewconfig.zsh
-	backup () {
-		rsync -avP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
-		rsync -avP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude /Volumes/rjeraldiSSD barutkin@109.202.17.2:/home/edu/IT/21-school/ >> $HOME/$user42.backup.log 2>&1 ;
-		# rsync -aLvP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude $HOME/goinfre barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
-	}
-	maclogout () {
-    chmod -R +a "everyone deny delete,write" /Volumes/rjeraldiSSD/rjeraldi/Library
-    chmod -R +a "everyone deny delete,write" $HOME/Library
-    osascript -e 'tell application "System Events" to log out'
-	}
-  screensaver () {
-    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
-  }
-  # cacheclean () {
-    find $HOME/ -maxdepth 1 -name "*42_cache_bak*" -exec rm -rv {} >> $HOME/$user42.cacheclean.log 2>&1 \;
-    find $HOME/Library/ -name "*42_cache_bak*" -exec rm -rv {} >> $HOME/$user42.cacheclean.log 2>&1 \;
-    # find $HOME/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
-  # }
-fi
+## homebrew tweak to work on 42 session etc.
+#if [ "$(uname)" == "Darwin" ]; then
+#  usbPath='/Volumes/rjeraldiSSD/rjeraldi'
+#  homePath=$HOME
+#  chmod -R -a "everyone deny delete,write" /Volumes/rjeraldiSSD/rjeraldi/Library 2>/dev/null
+#  chmod -R -a "everyone deny delete,write" $HOME/Library 2>/dev/null
+#	for file in {'Franz','Google', 'Royal TSX','TabNine','Vivaldi','com.eltima.cloudmounter','com.lemonmojo.RoyalTSX.App'}; do
+#		rm -rf "$homePath/Library/Application Support/$file"
+#		ln -sf "$usbPath/Library/Application Support/$file" "$homePath/Library/Application Support/"
+#	done
+#  # killall Dock
+#	# source $HOME/.macrc
+#
+#  export LC_ALL=en_US.UTF-8
+#
+#	[[ -r "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh" ]] && . "/Users/rjeraldi/.brew/etc/profile.d/bash_completion.sh"
+#
+#
+#  export PATH=$HOME/.brew/opt/ruby/bin:$HOME/.brew/lib/ruby/gems/2.6.0/bin:$PATH
+#  disable_brewruby () {
+#    export PATH=$PATH_BACKUP
+#  }
+#  # export LDFLAGS="-L$HOME/.brew/opt/ruby/lib"
+#  # export CPPFLAGS="-I$HOME/.brew/opt/ruby/include"
+#  # export PKG_CONFIG_PATH="$HOME/.brew/opt/ruby/lib/pkgconfig"
+#
+#	export TMUX_TMPDIR=$HOME/tmp
+#	user42=rjeraldi
+#	uid42=10657
+#	source $HOME/.brewconfig.zsh
+#	backup () {
+#		rsync -avP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude $HOME/ barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+#		rsync -avP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude /Volumes/rjeraldiSSD barutkin@109.202.17.2:/home/edu/IT/21-school/ >> $HOME/$user42.backup.log 2>&1 ;
+#		# rsync -aLvP -e 'ssh -p 6522' --delete-before --exclude-from=$HOME/rsync.exclude $HOME/goinfre barutkin@109.202.17.2:/home/edu/IT/21-school/$user42.backup/ >> $HOME/$user42.backup.log 2>&1 ;
+#	}
+#	maclogout () {
+#    chmod -R +a "everyone deny delete,write" /Volumes/rjeraldiSSD/rjeraldi/Library
+#    chmod -R +a "everyone deny delete,write" $HOME/Library
+#    osascript -e 'tell application "System Events" to log out'
+#	}
+#  screensaver () {
+#    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+#  }
+#  # cacheclean () {
+#    find $HOME/ -maxdepth 1 -name "*42_cache_bak*" -exec rm -rv {} >> $HOME/$user42.cacheclean.log 2>&1 \;
+#    find $HOME/Library/ -name "*42_cache_bak*" -exec rm -rv {} >> $HOME/$user42.cacheclean.log 2>&1 \;
+#    # find $HOME/ -name ".DS_Store"  -exec rm {} 2>/dev/null \;
+#  # }
+#fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
