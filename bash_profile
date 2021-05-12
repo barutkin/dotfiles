@@ -1,5 +1,6 @@
 # .bash_profile
 
+export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPATH=$HOME/.gopath
 export PATH=$GOPATH:$GOPATH/bin:~/bin/:$PATH
 export PATH_BACKUP=$PATH
