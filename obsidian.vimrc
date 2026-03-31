@@ -76,15 +76,15 @@ map Ё ±
 map ; $
 map [ ~
 map ] `
-map ! !
-map @ @
-map # #
-map $ $
-map % %
-map ^ ^
-map & &
-map * *
-map ( (
-map ) )
+" map ! !
+" map @ @
+" map # #
+" map $ $
+" map % %
+" map ^ ^
+" map & &
+" map * *
+" map ( (
+" map ) )
 map - _
-map + +
+" map + +

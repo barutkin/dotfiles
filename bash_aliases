@@ -4,6 +4,7 @@ alias ll='ls -la'
 alias diffg='git diff'
 alias youtube-dl-mkv='youtube-dl --merge-output-format mkv'
 alias gccw='gcc -Wall -Wextra -Werror'
+alias git-lfs='git lfs'
 if [ "$(uname)" == "Darwin" ]; then
   alias top='top -o cpu'
   alias norminette='PATH=$PATH_BACKUP norminette -R CheckForbiddenSourceHeader'

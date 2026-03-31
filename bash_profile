@@ -1,8 +1,16 @@
 # .bash_profile
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/sberjdk-21.0.10.jdk/Contents/Home/
 export GOPATH=$HOME/.gopath
-export PATH=$GOPATH:$GOPATH/bin:~/bin/:$PATH
+export PATH=$GOPATH:$GOPATH/bin:$PATH
+export NODEPATH=/Applications/Node.js/Binary/node-v22.16.0-darwin-x64/
+export PATH=$NODEPATH:$NODEPATH/bin:$PATH
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Development/bin
+export MAVEN_HOME=/Applications/apache-maven-3.9.6
+export PATH=$MAVEN_HOME/bin:$PATH
 export PATH_BACKUP=$PATH
 
 test -s ~/.bash_aliases && . ~/.bash_aliases || true
@@ -101,3 +109,6 @@ fi
 #   echo 'export PATH="/Volumes/rjeraldiSSD/rjeraldi/.brew/opt/openjdk/bin:$PATH"' >> ~/.bash_profile
 # For compilers to find openjdk you may need to set:
 #   export CPPFLAGS="-I/Volumes/rjeraldiSSD/rjeraldi/.brew/opt/openjdk/include"
+
+# GigaCode CLI
+export PATH="/Users/19196730/.gigacode/bin:$PATH"

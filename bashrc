@@ -157,3 +157,6 @@ unset use_color sh
 
 # export my 42email
 # export MAIL='rjeraldi@student.21-school.ru'
+
+# GigaCode CLI
+export PATH="/Users/19196730/.gigacode/bin:$PATH"
